@@ -1,4 +1,4 @@
-fi = open('D:/Phuong/Code/Python/PRACTICEAGAIN/ADVENTOFCODEDAY1/DAY1.inp')
+fi = open('DAY1.inp')
 locIP1 = []
 locIP2 = []
 locList = fi.readlines()
@@ -11,8 +11,12 @@ for line in locList:
 locIP1.sort()
 locIP2.sort()
 totalDistance = 0
+occuranceTimes = 0
 for i in range(0, len(locIP1)):
     totalDistance += abs(locIP1[i] - locIP2[i])
-fo = open('D:/Phuong/Code/Python/PRACTICEAGAIN/ADVENTOFCODEDAY1/DAY1.out', 'w')
+    occuranceTimes += locIP1[i] * locIP2.count(locIP1[i])
+fo = open('DAY1.out', 'w')
 fo.write(str(totalDistance))
+fo.write("\n")
+fo.write(str(occuranceTimes))
 fo.close()
